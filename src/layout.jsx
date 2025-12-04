@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 
-const layout = () => {
+const Layout = () => {
   return (
     <div className="min-h-screen">
       <header className="p-4 border-b flex gap-4">
@@ -17,4 +17,4 @@ const layout = () => {
   );
 };
 
-export default layout;
+export default Layout;
