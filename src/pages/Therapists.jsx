@@ -12,8 +12,8 @@ const Therapists = () => {
         {availableTherapists.map((therapist) => (
           <li key={therapist.id} className="border p-4 rounded">
             <h2 className="font-semibold">{therapist.name}</h2>
-            <p></p>
-            <p></p>
+            <p>Price: ${therapist.pricePerHour}/hour</p>
+            <p>Rating: {therapist.rating}</p>
           </li>
         ))}
       </ul>
