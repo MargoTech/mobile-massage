@@ -1,22 +1,19 @@
-import { therapists } from "../types/therapists";
+import { useTherapists } from "../hooks/useTherapists";
 
 const Therapists = () => {
-  const availableTherapists = therapists.filter(
-    (therapist) => therapist.isAvailable
-  );
+  const { therapists } = useTherapists(true);
 
   return (
     <div>
       <h1 className="text-2xl mb-4">Available Therapists</h1>
-      <ul className="space-y-2">
-        {availableTherapists.map((therapist) => (
-          <li key={therapist.id} className="border p-4 rounded">
-            <h2 className="font-semibold">{therapist.name}</h2>
-            <p>Price: ${therapist.pricePerHour}/hour</p>
-            <p>Rating: {therapist.rating}</p>
-          </li>
-        ))}
-      </ul>
+
+      {therapists.map((t) => (
+        <div key={t.id} className="border p-4 rounded mb-2">
+          <h2 className="font-semibold">{t.name}</h2>
+          <p>Price: ${t.pricePerHour}/hour</p>
+          <p>Rating: {t.rating}</p>
+        </div>
+      ))}
     </div>
   );
 };
